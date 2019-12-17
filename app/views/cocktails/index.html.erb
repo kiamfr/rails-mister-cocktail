@@ -1,0 +1,17 @@
+<h2>All available cocktails</h2>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+
+    <div class="card" style="width: 18rem;">
+      <img src=<%= cocktail.picture_url %> class="card-img-top") />
+    <div class="card-body">
+      <h5 class="card-title"><%= cocktail.name %></h5>
+      <%= link_to "More details", cocktail_path(cocktail), class: "btn btn-dark rounded-pill" %>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>
+
+<%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-warning rounded" %>
