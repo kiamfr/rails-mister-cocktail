@@ -1,8 +1,14 @@
+<div class="--container">
+
 <h3>Add a new cocktail</h3>
 <%= simple_form_for(@cocktail) do |f| %>
   <%= f.input :name %>
   <%= f.input :picture_url %>
-  <%= f.submit "Add a cocktail", class: "btn btn-primary" %>
+  <%= f.submit "Add cocktail", class: "btn btn-primary" %>
   <%= f.button :button, 'Cancel', type: :reset, class: "btn btn-danger" %>
 <% end %>
+
+<%= render 'back' %>
+
+</div>
 

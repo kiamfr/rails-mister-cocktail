@@ -1,4 +1,49 @@
 // Import your components CSS files here.
-@import "alert";
-@import "avatar";
+
+body {
+  background-color: rgb(245,245,245);
+  color: #1C0F13;
+  font-family: 'Baskervville', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.--container {
+  margin: 0 auto;
+  width: 75vw;
+  padding-bottom: 3em;
+  padding-top: 3em;
+}
+
+.show-container {
+  margin: 0 auto;
+  width: 75%;
+  padding-bottom: 3em;
+}
+
+@media only screen and (max-width: 599px) {
+  .show-container {
+    margin: 0;
+    width: 100vw;
+  }
+  .--container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+
+
 @import "navbar";
+@import "buttons";
+@import "cards";
+@import "back";
+@import "form";
+@import "cocktail_show";
+@import url('https://fonts.googleapis.com/css?family=Baskervville|Permanent+Marker&display=swap');

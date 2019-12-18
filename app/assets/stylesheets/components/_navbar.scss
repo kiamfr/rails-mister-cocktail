@@ -1,12 +1,27 @@
-.navbar-lewagon {
+.nav-container {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  color: #fff;
+  background-color: #2F262A;
+
+  h2 {
+    font-family: 'Baskervville', serif;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+@media only screen and (max-width: 599px) {
+  .nav-container {
+    display: block;
+    h2 {
+      font-size: 2rem;
+      padding-bottom: 0.5em;
+    }
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
