@@ -23,7 +23,7 @@
 }
 
 .ingredients {
-  width: 75%;
+  width: 35%;
   // padding-right: 1.5em;
   border-right: 4px dotted #000;
 }
@@ -46,6 +46,7 @@
   }
   .ingredients {
     border: none;
+    width: 75%;
   }
   .recipe-description {
     padding-top: 2em;
