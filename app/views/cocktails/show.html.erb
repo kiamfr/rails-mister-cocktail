@@ -1,5 +1,5 @@
 <div class="show-container">
-  <div class="profile-banner" style="background-image: url('<%= cl_image_path @cocktail.photo %>')">
+  <div class="profile-banner" style="background-image: url('<%= cl_image_path('MacBook_-_1_ckigaw.png', :default_image => @cocktail.photo) %>')">
     <h2><%= @cocktail.name %></h2>
   </div>
   <div class="recipe">
@@ -14,12 +14,20 @@
         </li>
       <% end %>
       </ul>
-      <%= link_to "Add things to cocktail", new_cocktail_dose_path(@cocktail, @dose) %>
     </div>
     <div class="recipe-description">
       <h3>Description</h3>
       <span><%= @cocktail.recipe %></span>
     </div>
+  </div>
+  <div class="--container">
+  <h3>Add ingredients and dose</h3>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Add a new dose", class: "btn btn-primary" %>
+    <%= f.button :button, 'Cancel', type: :reset, class: "btn btn-danger" %>
+  <% end %>
   </div>
   <%= render 'back' %>
 </div>
