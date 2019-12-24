@@ -13,6 +13,14 @@
     font-size: 3rem;
     letter-spacing: 0.1em;
   }
+
+  .links {
+    display: flex;
+  }
+  input {
+    background-color: #F5F5F5;
+    opacity: 0.5;
+  }
 }
 
 @media only screen and (max-width: 599px) {
@@ -22,6 +30,11 @@
       font-size: 2rem;
       padding-bottom: 0.5em;
     }
+  .links {
+    display: block;
+  }
+  input {
+    width: 12em;
+  }
   }
 }
-
