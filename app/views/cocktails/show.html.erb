@@ -14,20 +14,19 @@
         </li>
       <% end %>
       </ul>
+
+  <h5>Add ingredients</h5>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Add a new dose", class: "btn btn-primary" %>
+  <% end %>
+
     </div>
     <div class="recipe-description">
       <h3>Description</h3>
       <span><%= @cocktail.recipe %></span>
     </div>
-  </div>
-  <div class="--container">
-  <h3>Add ingredients and dose</h3>
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
-    <%= f.submit "Add a new dose", class: "btn btn-primary" %>
-    <%= f.button :button, 'Cancel', type: :reset, class: "btn btn-danger" %>
-  <% end %>
   </div>
   <%= render 'back' %>
 </div>
