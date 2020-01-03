@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :doses, only: [:create]
+    resources :reviews, only: [:create]
   end
   resources :doses, only: :destroy
 end

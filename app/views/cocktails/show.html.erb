@@ -1,5 +1,14 @@
 <div class="show-container">
-  <div class="profile-banner" style="background-image: url('<%= cl_image_path('MacBook_-_1_ckigaw.png', :default_image => @cocktail.photo) %>')">
+
+  <% if @cocktail.photo.blank? %>
+      <div class="profile-banner" style="background-image: url('<%= cl_image_path 'MacBook_-_1_ckigaw.png' %>')">
+        <% else %>
+      <div class="profile-banner" style="background-image: url('<%= cl_image_path @cocktail.photo %>')">
+        <% end %>
+
+
+
+
     <h2><%= @cocktail.name %></h2>
   </div>
   <div class="recipe">
@@ -25,7 +34,16 @@
     </div>
     <div class="recipe-description">
       <h5>Reviews</h5>
-      <span><%= @cocktail.recipe %></span>
+      <ul>
+      <% @cocktail.reviews.each do |entry| %>
+        <li><%= entry.rating %> - "<%= entry.review %>"
+        </li>
+      <% end %>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+    <%= f.input :rating, input_html: { maxlength: 5} %>
+    <%= f.input :review, input_html: { maxlength: 15} %>
+    <%= f.submit "Add review", class: "btn btn-primary" %>
+  <% end %>
     </div>
   </div>
   <%= render 'back' %>
