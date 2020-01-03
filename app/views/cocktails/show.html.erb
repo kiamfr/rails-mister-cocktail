@@ -33,17 +33,29 @@
 
     </div>
     <div class="recipe-description">
-      <h5>Reviews</h5>
+      <h3>Reviews</h3>
       <ul>
       <% @cocktail.reviews.each do |entry| %>
         <li><%= entry.rating %> - "<%= entry.review %>"
         </li>
       <% end %>
-      <%= simple_form_for [@cocktail, @review] do |f| %>
+    </ul>
+
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Add a review
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <%= simple_form_for [@cocktail, @review] do |f| %>
     <%= f.input :rating, input_html: { maxlength: 5} %>
     <%= f.input :review, input_html: { maxlength: 15} %>
-    <%= f.submit "Add review", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
+</div>
+
+
+
     </div>
   </div>
   <%= render 'back' %>

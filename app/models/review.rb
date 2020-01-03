@@ -4,6 +4,6 @@ class Review < ApplicationRecord
   after_initialize :init
 
   def init
-    self.rating ||= 0.0
+    self.rating ||= 0
   end
 end

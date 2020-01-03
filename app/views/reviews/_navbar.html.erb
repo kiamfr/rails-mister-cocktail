@@ -1,0 +1,13 @@
+<div class="nav-container">
+  <div class="page-name">
+    <h2>Monsieur Cocktail</h2>
+  </div>
+  <div class="links">
+  <%= link_to "Add Cocktail", new_cocktail_path, class: "btn-header" %>
+    <form class="form-inline my-2 my-lg-0" action="/cocktails/search" method="get">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>

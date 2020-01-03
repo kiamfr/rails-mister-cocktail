@@ -7,8 +7,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to cocktail_path(@cocktail)
     else render :new
-  end
-
+    end
   end
 
   private
@@ -19,5 +18,9 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:rating, :review, :cocktail_id)
+  end
+
+  def average_rating
+    Review.average(:rating)
   end
 end
