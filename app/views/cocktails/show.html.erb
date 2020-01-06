@@ -48,7 +48,7 @@
 </p>
 <div class="collapse" id="collapseExample">
     <%= simple_form_for [@cocktail, @review] do |f| %>
-    <%= f.input :rating, input_html: { maxlength: 5} %>
+    <%= f.input :rating, :collection => 1..5, selected: '1' %>
     <%= f.input :review, input_html: { maxlength: 15} %>
     <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
   <% end %>
